@@ -12,10 +12,10 @@ URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	heimdal-rsh
-BuildRequires:	xorg-lib-libXaw-devel
-BuildRequires:	xorg-util-util-macros
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-data-xbitmaps
+BuildRequires:	xorg-lib-libXaw-devel
+BuildRequires:	xorg-util-util-macros
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
