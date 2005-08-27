@@ -1,4 +1,4 @@
-# $Rev: 3424 $, $Date: 2005-08-15 12:17:57 $
+# $Rev: 3424 $, $Date: 2005-08-27 17:42:47 $
 #
 Summary:	xsm application
 Summary(pl):	Aplikacja xsm
@@ -16,7 +16,7 @@ BuildRequires:	automake
 BuildRequires:	heimdal-rsh
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-util-util-macros
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-data-xbitmaps
 BuildRoot:	%{tmpdir}/xsm-%{version}-root-%(id -u -n)
 
