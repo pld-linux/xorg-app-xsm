@@ -1,5 +1,3 @@
-# $Rev: 3424 $, $Date: 2005-08-27 17:42:47 $
-#
 Summary:	xsm application
 Summary(pl):	Aplikacja xsm
 Name:		xorg-app-xsm
@@ -18,10 +16,7 @@ BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-util-util-macros
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-data-xbitmaps
-BuildRoot:	%{tmpdir}/xsm-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 xsm application.
@@ -29,11 +24,9 @@ xsm application.
 %description -l pl
 Aplikacja xsm.
 
-
 %prep
 %setup -q -n xsm-%{version}
 %patch0 -p1
-
 
 %build
 %{__aclocal}
@@ -44,17 +37,14 @@ Aplikacja xsm.
 
 %{__make}
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(644,root,root,755)
