@@ -1,12 +1,12 @@
 Summary:	xsm application
 Summary(pl):	Aplikacja xsm
 Name:		xorg-app-xsm
-Version:	0.99.1
+Version:	0.99.2
 Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/app/xsm-%{version}.tar.bz2
-# Source0-md5:	8c5b2229fa8e270e5c5bcfe09d477877
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC2/app/xsm-%{version}.tar.bz2
+# Source0-md5:	07968f527f3f67576a21051174c7fb82
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
