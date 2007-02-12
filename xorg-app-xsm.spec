@@ -1,5 +1,5 @@
 Summary:	xsm application
-Summary(pl):	Aplikacja xsm
+Summary(pl.UTF-8):   Aplikacja xsm
 Name:		xorg-app-xsm
 Version:	1.0.1
 Release:	1
@@ -21,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 xsm application.
 
-%description -l pl
+%description -l pl.UTF-8
 Aplikacja xsm.
 
 %prep
