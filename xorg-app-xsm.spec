@@ -1,5 +1,5 @@
 Summary:	xsm application
-Summary(pl.UTF-8):   Aplikacja xsm
+Summary(pl.UTF-8):	Aplikacja xsm
 Name:		xorg-app-xsm
 Version:	1.0.1
 Release:	1
