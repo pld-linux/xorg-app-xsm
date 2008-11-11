@@ -1,0 +1,19 @@
+commit 6f1ebee7cba16f31c6201d6654d0c4ff9502ec12
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Wed Aug 20 10:32:53 2008 -0400
+
+    xaw8 is gone, use xaw7
+
+diff --git a/configure.ac b/configure.ac
+index 269bf84..0b15075 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -64,7 +64,7 @@ AC_CHECK_FUNC([putenv], [],
+ 
+ # Checks for pkg-config packages
+ PKG_CHECK_MODULES(XSM, x11 xt ice sm)
+-XAW_CHECK_XPRINT_SUPPORT(XSM_XAW)
++PKG_CHECK_MODULES(XSM_XAW, xaw7)
+ XSM_CFLAGS="$XSM_XAW_CFLAGS $XSM_CFLAGS"
+ XSM_LIBS="$XSM_XAW_LIBS $XSM_LIBS"
+ 
