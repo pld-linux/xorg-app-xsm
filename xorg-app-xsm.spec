@@ -2,11 +2,12 @@ Summary:	xsm application
 Summary(pl.UTF-8):	Aplikacja xsm
 Name:		xorg-app-xsm
 Version:	1.0.1
-Release:	4
+Release:	5
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xsm-%{version}.tar.bz2
 # Source0-md5:	cce867ff7d0df9c0b9e682591779952c
+Patch0:		%{name}-xaw.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -26,14 +27,15 @@ Aplikacja xsm.
 
 %prep
 %setup -q -n xsm-%{version}
+%patch0 -p1
 
 sed -i -e '/^RSH=$/d' configure.ac
 
 %build
-#%{__aclocal}
-#%{__autoconf}
-#%{__autoheader}
-#%{__automake}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	RSH=/usr/bin/rsh
 
