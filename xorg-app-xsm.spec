@@ -1,35 +1,46 @@
-Summary:	xsm application
-Summary(pl.UTF-8):	Aplikacja xsm
+Summary:	xsm application - X Session Manager
+Summary(pl.UTF-8):	Aplikacja xsm - zarządca sesji X
 Name:		xorg-app-xsm
-Version:	1.0.1
-Release:	5
+Version:	1.0.2
+Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xsm-%{version}.tar.bz2
-# Source0-md5:	cce867ff7d0df9c0b9e682591779952c
-Patch0:		%{name}-xaw.patch
+# Source0-md5:	521d2a34c6dbc0700f489290d51b0b67
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	sed >= 4.0
+BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXt-devel >= 1.0.0
-BuildRequires:	xorg-util-util-macros >= 0.99.2
+BuildRequires:	xorg-util-util-macros >= 1.8
 Requires:	xorg-lib-libXt >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-xsm application.
+xsm application is a session manager. A session is a group of
+applications, each of which has a particular state. xsm allows you to
+create arbitrary sessions - for example, you might have a "light"
+session, a "development" session, or an "xterminal" session. Each
+session can have its own set of applications. Within a session, you
+can perform a "checkpoint" to save application state, or a "shutdown"
+to save state and exit the session. When you log back in to the
+system, you can load a specific session, and you can delete sessions
+you no longer want to keep.
 
 %description -l pl.UTF-8
-Aplikacja xsm.
+Aplikacja xsm to zarządca sesji. Sesja to grupa aplikacji, z których
+każda jest w jakimś stanie. xsm pozwala tworzyć dowolne sesje - np.
+można mieć sesję "light", "development" i "xterminal". Każda sesja
+może mieć własny zbiór aplikacji. W ramach sesji można wykonać
+operację "checkpoint" w celu zapisania stanu aplikacji lub "shutdown",
+aby zapisać stan i zakończyć sesję. Po ponownym zalogowaniu do systemu
+można wczytać określoną sesję; można także usunąć sesje już
+niepotrzebne.
 
 %prep
 %setup -q -n xsm-%{version}
-%patch0 -p1
-
-sed -i -e '/^RSH=$/d' configure.ac
 
 %build
 %{__aclocal}
@@ -37,7 +48,7 @@ sed -i -e '/^RSH=$/d' configure.ac
 %{__autoheader}
 %{__automake}
 %configure \
-	RSH=/usr/bin/rsh
+	--with-rsh=/usr/bin/ssh
 
 %{__make} \
 	SYSTEM_INIT_DIR=/etc/X11/xsm
