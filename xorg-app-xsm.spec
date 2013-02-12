@@ -1,21 +1,23 @@
 Summary:	xsm application - X Session Manager
 Summary(pl.UTF-8):	Aplikacja xsm - zarządca sesji X
 Name:		xorg-app-xsm
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xsm-%{version}.tar.bz2
-# Source0-md5:	521d2a34c6dbc0700f489290d51b0b67
+# Source0-md5:	2a9818eba05556e6e99be87d9b3974c4
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-libSM-devel
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXaw-devel
-BuildRequires:	xorg-lib-libXt-devel >= 1.0.0
+BuildRequires:	xorg-lib-libXt-devel >= 1.0.99
 BuildRequires:	xorg-util-util-macros >= 1.8
-Requires:	xorg-lib-libXt >= 1.0.0
+Requires:	xorg-lib-libXt >= 1.0.99
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -50,15 +52,13 @@ niepotrzebne.
 %configure \
 	--with-rsh=/usr/bin/ssh
 
-%{__make} \
-	SYSTEM_INIT_DIR=/etc/X11/xsm
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	SYSTEM_INIT_DIR=/etc/X11/xsm
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
