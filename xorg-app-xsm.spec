@@ -1,23 +1,26 @@
 Summary:	xsm application - X Session Manager
 Summary(pl.UTF-8):	Aplikacja xsm - zarządca sesji X
 Name:		xorg-app-xsm
-Version:	1.0.4
+Version:	1.0.5
 Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	https://xorg.freedesktop.org/releases/individual/app/xsm-%{version}.tar.bz2
-# Source0-md5:	bd32c14f09d58f46084b6a8f20e6e8f1
+Source0:	https://xorg.freedesktop.org/releases/individual/app/xsm-%{version}.tar.xz
+# Source0-md5:	9589177adcf3fb9f93c88ba033241581
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXaw-devel
-BuildRequires:	xorg-lib-libXt-devel >= 1.0.99
+BuildRequires:	xorg-lib-libXt-devel >= 1.1
+BuildRequires:	xorg-proto-xproto-devel >= 7.0.17
 BuildRequires:	xorg-util-util-macros >= 1.8
-Requires:	xorg-lib-libXt >= 1.0.99
+BuildRequires:	xz
+Requires:	xorg-lib-libXt >= 1.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
