@@ -1,12 +1,12 @@
 Summary:	xsm application - X Session Manager
 Summary(pl.UTF-8):	Aplikacja xsm - zarządca sesji X
 Name:		xorg-app-xsm
-Version:	1.0.5
+Version:	1.0.6
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	https://xorg.freedesktop.org/releases/individual/app/xsm-%{version}.tar.xz
-# Source0-md5:	9589177adcf3fb9f93c88ba033241581
+# Source0-md5:	b6c893766aa5a2caf3a742a62a2bb03d
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
